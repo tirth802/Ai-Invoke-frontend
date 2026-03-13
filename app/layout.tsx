@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import MockProvider from "@/mocks/MockProvider";
+import { WorkspaceProvider } from "@/features/workspace/context/WorkspaceContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +13,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,7 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <MockProvider>
+          <WorkspaceProvider>
+          {children}
+          </WorkspaceProvider>
+          </MockProvider> 
       </body>
     </html>
   );

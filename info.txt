@@ -1,0 +1,78 @@
+src
+│
+├ app                     # Next.js App Router
+│   ├ layout.tsx
+│   ├ page.tsx
+│   │
+│   └ workspace
+│       ├ page.tsx
+│       └ [workspaceId]
+|                ├ inbox
+|                │   └ page.tsx
+|                │   └ layout.tsx
+|                ├ people
+|                │   └ page.tsx
+|                │   └ layout.tsx
+|                └ settings
+|                    └ page.tsx
+│
+├ features                # Feature based modules
+│
+│   ├ workspace
+│   │   ├ components
+|   |   |   ├ NavItem.tsx
+|   |   |   ├ UserProfile.tsx
+│   │   │   ├ WorkspaceDropdown.tsx
+│   │   │   └ CreateWorkspaceModel.tsx
+│   │   │
+│   │   ├ hooks
+│   │   │   └ useWorkspace.ts
+│   │   │
+│   │   ├ services
+|   |   |   ├user.service.ts
+│   │   │   └ workspace.service.ts
+│   │   │
+│   │   └ types
+│   │       └ workspace.types.ts
+│   │       └ user.ts
+│   └ inbox
+│       ├ components
+|       |   ├ InboxSidebar.tsx
+│       │   ├ MessageList.tsx
+│       │   ├ MessageItem.tsx
+│       │   └ MessagePreview.tsx
+│       │
+│       ├ services
+│       │   └ inbox.service.ts
+│       │
+│       └ types
+│           └ message.types.ts
+│
+├ shared                  # reusable UI across project
+│
+│   ├ components
+│   │   ├ Avatar.tsx
+│   │   ├ Badge.tsx
+│   │   ├ Button.tsx
+│   │   └ Dropdown.tsx
+│   │
+│   ├ layout
+│   │   └ Header.tsx
+│   │   
+│   │   
+│   └ utils
+│       └ utils.ts
+│
+├ services                # global services (api client etc)
+│   └ api.ts
+│
+├ types                   # global types
+│   └ common.types.ts
+│
+├ mocks
+│    ├ browser.ts
+│    ├ handlers.ts
+│    └ MockProvider.tsx
+│
+└ public
+
