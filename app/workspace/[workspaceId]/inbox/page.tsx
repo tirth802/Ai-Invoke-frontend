@@ -1,7 +1,9 @@
+import EmptyState from "@/features/inbox/components/EmptyState";
+
 export default function InboxPage(){
     return(
-        <div>
-            inbox page
+        <div >
+          <EmptyState/>
         </div>
     )
 }

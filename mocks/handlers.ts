@@ -1,5 +1,7 @@
 
+import { request } from "http";
 import { http, HttpResponse } from "msw";
+import { email } from "zod";
 const workspaces = [
   {
     id: 1,
@@ -40,4 +42,23 @@ export const handlers = [
 
     return HttpResponse.json(newWorkspace);
   }),
+
+  //  account
+  http.get("/api/account",()=>{
+    return HttpResponse.json({
+    name:" Vivek K",
+    email:"vivek@gmail.com",
+    signature:"Best regard,\nVivek"
+      })
+  }),
+
+  http.put("/api/account",async({request})=>{
+     
+    const  body = await request.json()
+
+    return HttpResponse.json({
+      message:"Account updated",
+      data:body
+    })
+  })
 ];

@@ -17,7 +17,17 @@ src
 |                    └ page.tsx
 │
 ├ features                # Feature based modules
-│
+|   ├ account
+|   |   ├ components
+|   |   |   ├ ProfileTabs.tsx
+|   |   |   ├ AccountForm.tsx
+|   |   |   └ SecurityForm.tsx
+|   |   ├ services
+│       │   └ account.service.ts
+│       │
+│       └ types
+│           └ account.schema.ts
+│   |
 │   ├ workspace
 │   │   ├ components
 |   |   |   ├ NavItem.tsx
@@ -38,6 +48,7 @@ src
 │   └ inbox
 │       ├ components
 |       |   ├ InboxSidebar.tsx
+|       |   ├ EmptyState.tsx
 │       │   ├ MessageList.tsx
 │       │   ├ MessageItem.tsx
 │       │   └ MessagePreview.tsx
@@ -67,6 +78,7 @@ src
 │   └ api.ts
 │
 ├ types                   # global types
+|   ├ account.schema.ts
 │   └ common.types.ts
 │
 ├ mocks
