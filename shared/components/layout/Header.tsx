@@ -10,7 +10,7 @@ export default  function Header() {
      
   const {workspaceId}=useParams()as{workspaceId:string}
   return (
-    <header className="h-16  flex items-center px-4 bg-white justify-between gap-40">
+    <header className="h-16  flex items-center px-4 bg-white justify-between gap-40 sticky top-0 z-50 shadow">
       <div className="flex items-center gap-5 flex-1 justify-start">
         {/* Logo or Brand Name */}
         <div className="flex items-center gap-5">
