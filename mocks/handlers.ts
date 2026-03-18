@@ -1,7 +1,7 @@
 
-import { request } from "http";
+
 import { http, HttpResponse } from "msw";
-import { email } from "zod";
+
 const workspaces = [
   {
     id: 1,
@@ -59,6 +59,24 @@ export const handlers = [
     return HttpResponse.json({
       message:"Account updated",
       data:body
+    })
+  }),
+
+  // Client Details
+  http.get('/api/clients/:id',({params})=>{
+    const {id}=params
+    return  HttpResponse.json({
+      id,
+      name:id === "1"?'TechCorp NL':'VoltEdge Solutions',
+      winRate:75.5,
+      contactPerson: 'Jan de Vries' ,
+       contactEmail:'j.devries@techcorp.nl',
+       industry:'Not Mentioned',
+      carriers: ['Emirates SkyCargo', 'Qatar Airways Cargo','Turkish Cargo'],
+       communicationStyle:"Communicates in a clear and professional manner, prefers detailed breakdowns, typically responds within two Days, and is price-conscious while prioritizing reliability.",
+      shippingPatterns:[{  route:'AMS->DMS',count:12},{  route:'HKG->LAX',count:20}],
+
+         
     })
   })
 ];

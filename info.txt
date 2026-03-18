@@ -10,7 +10,7 @@ src
 |                ├ inbox
 |                │   └ page.tsx
 |                │   └ layout.tsx
-|                ├ people
+|                ├ Client
 |                │   └ page.tsx
 |                │   └ layout.tsx
 |                └ settings
@@ -45,6 +45,18 @@ src
 │   │   └ types
 │   │       └ workspace.types.ts
 │   │       └ user.ts
+│   └ Client
+│   |    ├ components
+|   |    |   ├ ClientSidebar.tsx
+|   |    |   ├ EmptyState.tsx
+│   |    │   └ ClientDetailsPreview.tsx
+│   |    │
+│   |    ├ services
+│   |    │   └ client.service.ts
+│   |    │
+│   |    └ types
+│   |        └ client.types.ts
+│   │       
 │   └ inbox
 │       ├ components
 |       |   ├ InboxSidebar.tsx

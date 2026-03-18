@@ -3,7 +3,7 @@ import NavItem from "@/features/workspace/components/NavItem";
 import UserProfile from "@/features/workspace/components/UserProfile";
 import WorkspaceDropdown from "@/features/workspace/components/WorkspaceDropdown";
 
-import { ChevronDown, Flame, Inbox, Settings, Users } from "lucide-react";
+import { Flame, Inbox, Settings, Users } from "lucide-react";
 import { useParams } from "next/navigation";
 
 export default  function Header() {
@@ -33,7 +33,7 @@ export default  function Header() {
         <div className="flex items-center gap-3 flex-1 justify-center">
           <NavItem icon={Inbox} label="Inbox" href={`/workspace/${workspaceId}/inbox`} />
 
-          <NavItem icon={Users} label="People" href={`/workspace/${workspaceId}/people`} />
+          <NavItem icon={Users} label="Client" href={`/workspace/${workspaceId}/client`} />
 
           <NavItem
             icon={Settings}
