@@ -37,18 +37,18 @@ export default function ToneOfVoiceForm() {
             </p>
           )}
           {tone === "Friendly" && (
-            <p className="text-gray-700">
-              Thanks for reaching out! We’d love to help with your shipment and will get you a great quote soon.
+            <p className="text-gray-500 bg-blue-200">
+              Thanks for reaching out! We&apos;d love to help with your shipment and will get you a great quote soon.
             </p>
           )}
           {tone === "Formal" && (
-            <p className="text-gray-700">
+            <p className="text-gray-500 bg-blue-200">
               We appreciate your request. Kindly allow us to prepare a detailed quotation for your shipment needs.
             </p>
           )}
           {tone === "Casual" && (
-            <p className="text-gray-700">
-              Hey there! We’ll get back to you quickly with a quote for your shipment.
+            <p className="text-gray-500 bg-blue-200">
+              Hey there! We&apos;ll get back to you quickly with a quote for your shipment.
             </p>
           )}
         </div>

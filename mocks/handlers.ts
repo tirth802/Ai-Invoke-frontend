@@ -78,5 +78,70 @@ export const handlers = [
 
          
     })
-  })
+  }),
+  // Inbox Handler
+  http.get("/api/inbox", () => {
+    return HttpResponse.json([
+      {
+        id: "1",
+        company: "Global Trade Co.",
+        subject: "Quote request - AMS>DXB - 450kg general cargo - urgent",
+        status: "Quote",
+        tag: "New",
+        time: "6 min",
+        createdAt: "2026-03-19T14:30:00Z",
+      },
+      {
+        id: "2",
+        company: "TechSupply Inc.",
+        subject: "Booking confirmation - LAX>SIN - 1200kg electronics",
+        status: "Booking",
+        tag: "In Progress",
+        time: "2h 15m",
+        createdAt: "2026-03-19T16:30:00Z"
+      },
+       {
+      id: "3",
+      company: "FashionForward Ltd.",
+      subject: "Status inquiry - JFK>LHR - shipment tracking AWB 123456789",
+      status: "Status",
+      tag: "Lost",
+      time: "3h 30m",
+      createdAt: "2026-03-18T10:00:00Z", 
+    },
+
+    ]);
+  }),
+
+  http.get("/api/inbox/:id", ({ params }) => {
+    const id = params.id as string;
+
+    if (id === "1") {
+      return HttpResponse.json({
+        thread: [
+          {
+            from: "Global Trade Co.",
+            message: "Urgent Quote Request - Amsterdam to Dubai",
+            time: "Jan 15, 2024 2:53 PM",
+          },
+          {
+            from: "You",
+            message:
+              "Thank you for your inquiry. We will provide a competitive quote shortly.",
+            time: "Jan 15, 2024 5:34 PM",
+          },
+        ],
+        aiContext: {
+          extracted: "Origin: AMS, Destination: DXB, Cargo: 450kg general cargo",
+          missing: "Incoterms, Insurance preference",
+          quote: "USD 1950 - Express Air Freight, 3-4 days transit",
+          profile:
+            "Global Trade Co. - frequent urgent shipments, prefers air freight.",
+          reasoning: "High urgency, recommend prioritizing express air freight.",
+        },
+      });
+    }
+
+    return HttpResponse.json({ thread: [], aiContext: {} });
+  }),
 ];
